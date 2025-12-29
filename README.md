@@ -1,20 +1,67 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# 上海九院 3D医学影像系统 (JiuYuan 3D Medical Viewer)
 
-# Run and deploy your AI Studio app
+这是一个专业的基于 Web 的 3D 医学影像可视化平台，专为上海交通大学医学院附属第九人民医院（及相关医疗场景）设计。该系统允许医疗专业人员导入、查看和分析 STL 格式的 3D 医疗模型（如手术导板、骨骼结构、义齿模型等）。
 
-This contains everything you need to run your app locally.
+系统采用现代化的 React 技术栈构建，提供了流畅的 3D 交互体验和极简的玻璃拟态用户界面。
 
-View your app in AI Studio: https://ai.studio/apps/drive/1ES9fF7RaLwgsZRf9E5V3v_69ksIoV8pD
+## 🌟 主要功能
 
-## Run Locally
+### 1. 专业的模型查看
+*   **STL 格式支持**: 支持导入标准的 `.stl` 三维模型文件。
+*   **全方位交互**: 解锁了旋转限制，支持 360° 全视角查看（包括顶部、底部视图），配合平移和缩放功能，可无死角观察模型细节。
+*   **默认演示数据**: 内置上颌导板、下颌导板和骨骼结构的演示模型。
 
-**Prerequisites:**  Node.js
+### 2. 智能图层管理
+*   **多模型并存**: 支持同时加载多个模型进行对比。
+*   **可视化控制**:
+    *   **显示/隐藏**: 一键切换图层可见性。
+    *   **透明度调节**: 实时调整模型透明度（0-100%），便于观察重叠结构或内部细节。
+    *   **体积计算**: 自动解析 STL 网格并估算模型体积（单位：ml/cm³），辅助医疗分析。
+*   **颜色区分**: 导入时自动分配不同颜色，便于区分不同组织或部件。
 
+### 3. 环境与视觉适应
+*   **背景调节**: 提供背景亮度无级调节功能。支持从 **纯白**（临床文档模式）到 **纯黑**（沉浸式阅片模式）的自由切换。
+*   **自适应网格**: 底部参考网格线的颜色会根据背景亮度自动反转（深色背景显示亮线，浅色背景显示暗线），始终保持最佳可见性。
+*   **极简 UI**: 悬浮式玻璃拟态控制面板，最大化 3D 渲染区域，减少视觉干扰。
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## 🎮 操作指南
+
+| 鼠标/手势 | 动作 | 说明 |
+| :--- | :--- | :--- |
+| **左键拖拽** | 旋转 (Rotate) | 围绕中心点任意角度旋转模型 |
+| **右键拖拽** | 平移 (Pan) | 在平面上移动模型位置 |
+| **滚轮滚动** | 缩放 (Zoom) | 拉近或推远视角 |
+
+## 🛠️ 技术栈
+
+*   **核心框架**: React 19, TypeScript
+*   **3D 渲染引擎**: Three.js
+*   **React 3D 生态**: @react-three/fiber, @react-three/drei
+*   **样式与布局**: Tailwind CSS
+*   **图标库**: Lucide React
+*   **构建工具**: Vite (推荐)
+
+## 🚀 快速开始
+
+1.  **安装依赖**:
+    ```bash
+    npm install
+    ```
+
+2.  **启动开发环境**:
+    ```bash
+    npm run dev
+    ```
+
+3.  **构建生产版本**:
+    ```bash
+    npm run build
+    ```
+
+## 📝 注意事项
+
+*   **浏览器兼容性**: 建议使用支持 WebGL 的现代浏览器（Chrome, Edge, Firefox, Safari）。
+*   **体积算法**: 体积计算基于三角网格的有符号体积算法，仅适用于闭合流形网格（Watertight Mesh）。
+
+---
+Designed for **Shanghai Ninth People's Hospital**.
