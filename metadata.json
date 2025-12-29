@@ -1,0 +1,5 @@
+{
+  "name": "JiuYuan 3D Medical Viewer",
+  "description": "A professional 3D medical imaging system for Shanghai Ninth People's Hospital allowing STL visualization and volume analysis.",
+  "requestFramePermissions": []
+}
